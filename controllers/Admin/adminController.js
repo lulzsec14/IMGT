@@ -94,7 +94,8 @@ const registerAdmin = async (req, res) => {
         .json({ success: true, message: 'Admin created successfully!' });
     }
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -145,7 +146,8 @@ const loginAdmin = async (req, res) => {
       },
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -169,7 +171,8 @@ const getAdminDetails = async (req, res) => {
       data: result,
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -187,7 +190,8 @@ const logoutAdmin = async (req, res) => {
       });
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -238,7 +242,8 @@ const verifyEmail = async (req, res) => {
       message: 'Verification email sent successfully!',
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -282,7 +287,8 @@ const verifyAdmin = async (req, res) => {
       message: 'Admins email verified successfully!',
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -324,7 +330,8 @@ const updateAdminDetails = async (req, res) => {
       });
     }
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -357,7 +364,8 @@ const createNewCategory = async (req, res) => {
       return;
     }
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -449,7 +457,8 @@ const addNewStock = async (req, res, next) => {
     });
   } catch (err) {
     await session.abortTransaction();
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
   await session.endSession();
@@ -507,7 +516,8 @@ const updateStock = async (req, res) => {
     }
   } catch (err) {
     await session.abortTransaction();
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 
@@ -615,7 +625,8 @@ const sellStock = async (req, res) => {
     await session.commitTransaction();
   } catch (err) {
     await session.abortTransaction();
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 
@@ -638,7 +649,8 @@ const getAllStocks = async (req, res) => {
       data: allStocks,
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -679,7 +691,8 @@ const getStockByCategory = async (req, res) => {
       data: returnObj,
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -704,7 +717,8 @@ const getPurchasedStocks = async (req, res) => {
       data: returnObj,
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -724,7 +738,8 @@ const getAllPurchasedStock = async (req, res) => {
       data: allStocks,
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -749,7 +764,8 @@ const getSoldStocks = async (req, res) => {
       data: returnObj,
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -769,7 +785,8 @@ const getAllSoldStocks = async (req, res) => {
       data: allStocks,
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -797,7 +814,8 @@ const getBuyPayments = async (req, res) => {
       data: returnObj,
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -825,7 +843,8 @@ const getSellPayments = async (req, res) => {
       data: returnObj,
     });
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -881,7 +900,8 @@ const forgotPassword = async (req, res) => {
       }
     }
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -915,7 +935,8 @@ const resetPassword = async (req, res) => {
         .json({ success: true, message: 'Password updated successfully!' });
     }
   } catch (err) {
-    log.info(err);
+    // console.log(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -957,7 +978,7 @@ const updatePassword = async (req, res) => {
       .status(200)
       .json({ success: true, message: 'Password updated successfully!' });
   } catch (err) {
-    log.info(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -982,7 +1003,7 @@ const getAllCats = async (req, res, next) => {
       });
     }
   } catch (err) {
-    log.info(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };
@@ -1004,7 +1025,7 @@ const updateCategory = async (req, res) => {
       message: 'Category update successfully!',
     });
   } catch (err) {
-    log.info(err);
+    console.log(err);
     res.status(500).json({ success: false, error: err.message });
   }
 };

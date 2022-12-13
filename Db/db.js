@@ -10,9 +10,11 @@ const connectDB = async () => {
       useUnifiedTopology: true,
     });
 
-    log.info(`Mongoose Connected: ${conn.connection.host}`.yellow.bold);
+    // log.info(`Mongoose Connected: ${conn.connection.host}`.yellow.bold);
+    console.log(`Mongoose Connected: ${conn.connection.host}`.yellow.bold)
   } catch (err) {
-    log.info(`Error while connecting to database: ${err.message}`.red.bold);
+    // log.info(`Error while connecting to database: ${err.message}`.red.bold);
+    console.log(`Error while connecting to database: ${err.message}`.red.bold)
   }
 };
 
